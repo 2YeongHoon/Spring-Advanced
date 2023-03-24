@@ -1,6 +1,5 @@
 package hello.advanced.trace.logtrace;
 
-import hello.advanced.trace.TraceId;
 import hello.advanced.trace.TraceStatus;
 
 public interface LogTrace {
