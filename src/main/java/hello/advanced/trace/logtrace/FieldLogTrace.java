@@ -46,17 +46,23 @@ public class FieldLogTrace implements LogTrace {
         long resultTimeMs = stopTimeMs - status.getStartTimeMs();
         TraceId traceId = status.getTraceId();
         if (e == null) {
-            log.info("[{}] {}{} time={}ms", traceId.getId(), addSpace(COMPLETE_PREFIX, traceId.getLevel()), status.getMessage(), resultTimeMs);
+            log.info("[{}] {}{} time={}ms", traceId.getId(),
+                addSpace(COMPLETE_PREFIX, traceId.getLevel()), status.getMessage(), resultTimeMs);
         } else {
-            log.info("[{}] {}{} time={}ms ex={}", traceId.getId(), addSpace(EX_PREFIX, traceId.getLevel()), status.getMessage(), resultTimeMs, e.toString());
+            log.info("[{}] {}{} time={}ms ex={}", traceId.getId(),
+                addSpace(EX_PREFIX, traceId.getLevel()), status.getMessage(), resultTimeMs,
+                e.toString());
         }
+
+        releaseTraceId();
     }
 
     private void releaseTraceId(){
         if (traceIdHolder.isFirstLevel()){
             traceIdHolder = null;
+        }else{
+            traceIdHolder = traceIdHolder.createPreviousLevel();
         }
-        traceIdHolder = traceIdHolder.createPreviousLevel();
     }
 
     private static String addSpace(String prefix, int level) {
