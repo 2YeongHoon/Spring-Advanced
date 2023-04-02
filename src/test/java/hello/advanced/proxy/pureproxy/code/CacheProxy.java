@@ -13,10 +13,10 @@ public class CacheProxy implements Subject{
     }
 
     @Override
-    public String operation() {
+    public String operator() {
         log.info("캐시호출");
         if(cacheValue == null){
-            cacheValue = subject.operation();
+            cacheValue = subject.operator();
         }
         return cacheValue;
     }
