@@ -12,7 +12,7 @@ public class OrderControllerV5 {
   private final TraceTemplate template;
 //  private final LogTrace logTrace;
 
-  // Autowired 생략
+  // Autowired 생략가능
   public OrderControllerV5(OrderServiceV5 orderServiceV5, LogTrace trace){
     this.orderServiceV5 = orderServiceV5;
     this.template = new TraceTemplate(trace);
