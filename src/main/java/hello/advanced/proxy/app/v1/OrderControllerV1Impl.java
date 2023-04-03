@@ -1,5 +1,8 @@
 package hello.advanced.proxy.app.v1;
 
+/**
+ * 인터페이스 + 수동빈 등록 버전
+ */
 public class OrderControllerV1Impl implements OrderControllerV1{
 
     private final OrderServiceV1 orderServiceV1;

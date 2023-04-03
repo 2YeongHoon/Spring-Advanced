@@ -5,6 +5,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * 구체클래스 + 자동빈 등록
+ */
 @Slf4j
 @RestController
 public class OrderControllerV3 {

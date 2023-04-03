@@ -6,6 +6,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+/**
+ * 구체클래스 + 수동빈 등록 버전
+ */
 @Slf4j
 @RequestMapping // 수동으로 등록해야하기 때문에 @RestController를 사용하지 않음.
 @ResponseBody
